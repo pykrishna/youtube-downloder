@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<title>Youtube Video Downloader!</title>
+	<!-- <link rel="icon" href="templates/images.jpg"> -->
+	<link rel= "stylesheet" type= "text/css" href= "../../main.css">
+	<!-- <script type="text/javascript" src="../../main.js"></script> -->
+	<script type="text/javascript">
+	function show(){
+	document.getElementById('box').style.display = 'block';
+}
+</script>
+</head>
+
+<body>
+	<hr />
+
+
+	{% if eval==1: %}
+	<script>
+		alert("Please select an Option to download");
+	</script>
+	{% endif %}
+
+
+	{% if eval==2: %}
+	<script>
+		alert("Please enter a valid destination path to save file");
+	</script>
+	{% endif %}
+
+	<div id="titl">
+		The Youtube Video Downloader
+	</div>
+
+	<hr />
+
+	<div id="lside"></div>
+	<div id="rside"></div>
+
+	<div id="face">Hi Youtuber!</div>
+	<div id="tag">- A Python based Application.</div>
+
+	<div id="urlform">
+		<form action='/work' method='POST'>
+			Enter the Url to download from: <input type="text" style="font-size:10pt;height:23px" name="url" value=" Enter the URL here" size="95">
+			<input type="Submit" style="font-size:13pt;height:24px" value="Submit">
+		</form>
+	</div>
+
+
+	<div id="generate">
+		Check mark the quality to be downloaded:<br/><br/>
+		<form action='/receive' method='post'>
+			{% for x,y in packet: %}
+			<input type="radio" name="category" value={{y}} >{{y}} {{x}}</input><br/>
+			{% endfor %}
+			<br/>
+			Save file at location: <input type="text" name="save_at" placeholder="Type your PC user name" size="55"><br/> Like: C:\Users\(your PC user name)\Downloads
+			<p><input id="sbmt" type="submit" style="font-size:15pt;height:27px" value=" DOWNLOAD " onclick='show()'></p>
+
+		</form>
+	</div>
+
+	<div id="box" style="display:none">
+		<p>DOWNLOADING...</p>
+		<div class="cssload-wrap" id="cssload-wrap1">
+			<div class="cssload-ball" id="cssload-ball1"></div>
+		</div>
+
+		<div class="cssload-wrap" id="cssload-wrap2">
+			<div class="cssload-ball" id="cssload-ball2"></div>
+		</div>
+
+		<div class="cssload-wrap" id="cssload-wrap3">
+			<div class="cssload-ball" id="cssload-ball3"></div>
+		</div>
+
+		<div class="cssload-wrap" id="cssload-wrap4">
+			<div class="cssload-ball" id="cssload-ball4"></div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
